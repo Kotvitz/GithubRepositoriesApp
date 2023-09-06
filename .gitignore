@@ -1,0 +1,32 @@
+# Compiled class files
+/target/
+*.class
+
+# Log files
+*.log
+
+# IDE-specific files
+.idea/
+*.iml
+*.ipr
+*.iws
+.vscode/
+.project
+.classpath
+
+# Dependency directories
+/bin/
+/lib/
+/build/
+
+# Maven specific files
+/target/
+!.mvn/wrapper/maven-wrapper.jar
+
+# Compiled Java sources
+*.jar
+*.war
+*.ear
+
+# Spring Boot specific files
+spring-boot-starter-logging.log
