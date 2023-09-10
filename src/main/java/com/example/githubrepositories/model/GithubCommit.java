@@ -1,5 +1,5 @@
 package com.example.githubrepositories.model;
 
-public record GithubCommit(String sha, String message) {
+public record GithubCommit(String sha) {
 
 }
