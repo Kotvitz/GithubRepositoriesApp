@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.example.githubrepositories.model.GithubRepository;
+import com.example.githubrepositories.model.CustomResponse;
 import com.example.githubrepositories.service.GithubService;
 
 import reactor.core.publisher.Flux;
@@ -23,7 +23,7 @@ public class GithubController {
     }
     
     @GetMapping("/repositories/{username}")
-    public Flux<GithubRepository> listUserRepositories(@PathVariable String username) {
+    public Flux<CustomResponse> listUserRepositories(@PathVariable String username) {
         return githubService.getUserRepositories(username);
     }
 }
