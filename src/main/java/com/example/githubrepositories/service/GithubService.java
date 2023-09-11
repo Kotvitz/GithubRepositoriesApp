@@ -1,5 +1,6 @@
 package com.example.githubrepositories.service;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.web.reactive.function.client.WebClient;
@@ -19,6 +20,7 @@ public class GithubService {
 
 	private final WebClient webClient;
 
+	@Autowired
 	public GithubService(WebClient.Builder webClientBuilder) {
 		this.webClient = webClientBuilder.baseUrl("https://api.github.com").build();
 	}
