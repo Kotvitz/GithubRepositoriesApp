@@ -23,6 +23,20 @@ public class GithubService {
 		this.webClient = webClientBuilder.baseUrl("https://api.github.com").build();
 	}
 
+	/*
+	 * public Flux<Object> getUserRepositories(String username) { try { return
+	 * webClient.get().uri("/users/{username}/repos?type=owner", username)
+	 * .header("Authorization",
+	 * "Bearer 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").retrieve()
+	 * .bodyToFlux(GithubRepository.class).filter(repo -> !repo.isFork())
+	 * .flatMap((GithubRepository repo) -> { return
+	 * getBranchesForRepository(repo.owner().login(), repo.name()).collectList()
+	 * .map(branches -> { repo.setBranches(branches); return new
+	 * CustomResponse(repo.name(), repo.owner().login(), branches); }); }); } catch
+	 * (WebClientResponseException.NotFound ex) { ErrorResponse errorResponse = new
+	 * ErrorResponse(404, "User not found"); return Flux.just(errorResponse); } }
+	 */
+
 	public Flux<CustomResponse> getUserRepositories(String username) {
 		return webClient.get().uri("/users/{username}/repos?type=owner", username).retrieve()
 				.onStatus(HttpStatus.NOT_FOUND::equals,
